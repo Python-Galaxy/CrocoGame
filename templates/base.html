@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="\CrocoGame\static\css\base.css">
+    <link rel="icon" href="/CrocoGame/static/Иконка Сайта.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Revalia&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Revalia&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Montserrat:wght@500&family=Revalia&display=swap" rel="stylesheet">
+
+    <title>Игра в Крокодила</title>
+</head>
+<body>
+    <header id="head">
+        <a class="logo" href="https://www.youtube.com/@pythongalaxy5505" title="YouTube-канал Разработчика">PG</a>
+
+        <h1 class="croco-game">Игра "Крокодил"</h1>
+    </header>
+
+
+    <main id="main">
+        <h1 class="difficulty">Уровень Сложности</h1>
+
+        <select name="" id="select">
+            <option value="" selected>Лёгкий</option>
+            <option value="">Нормальный</option>
+            <option value="">Сложный</option>
+        </select>
+
+        <h1 class="counter">Счет</h1>
+        <h1 class="count-number">0</h1>
+
+      
+
+        <h1 class="clue">Подсказка <br> расположена ниже :)</h1>
+
+        <p class="info">При нажатии на кнопку <b>"Угадали?"</b> к счетчику добавляется <i>1 балл</i>. <br><br> 
+        При нажатии на кнопку <b>"Не угадали?"</b> от этого же счетчика будет отниматься <i>1 балл</i>.
+        </p>
+
+        <h1 id="word">Здесь будет слово!</h1>
+        <button class="generate">Сгенерировать</button>
+
+        <button class="true">Угадали?</button>
+        <button class="false">Не угадали?</button>
+
+        <button class="null-counter">Обнулить счетчик?</button>
+    </main>
+
+
+    <footer id="foot">
+        <h1 class="name">Python Galaxy</h1>
+
+        <img style="position: absolute; margin-left: 1500px; margin-top: 20px; border: 3px solid white; border-radius: 100%; box-shadow: 0 0 10px white;" src="\CrocoGame\static\Кружочек.png" alt="">
+        <img style="position: absolute; margin-left: 1600px; margin-top: 20px; border: 3px solid white; border-radius: 100%; box-shadow: 0 0 10px white;" src="\CrocoGame\static\Кружочек.png" alt="">
+        <img style="position: absolute; margin-left: 1700px; margin-top: 20px; border: 3px solid white; border-radius: 100%; box-shadow: 0 0 10px white;" src="\CrocoGame\static\Кружочек.png" alt="">
+
+        <a href="https://www.youtube.com/@pythongalaxy5505"><img style="position: absolute; width: 60px; height: 40px; margin-left: 1508px; margin-top: 36px;" src="\CrocoGame\static\youtube.png" alt=""></a>
+        <a href="#"><img style="position: absolute; width: 70px; height: 70px; margin-left: 1603px; margin-top: 22px;" src="\CrocoGame\static\insta.png" alt=""></a>
+        <a href="#"><img style="position: absolute; width: 50px; height: 50px; margin-left: 1713px; margin-top: 32px;" src="\CrocoGame\static\vk.png" alt=""></a>
+
+        <p class="name-add">(c) 2023. Все права защищены.</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        var counter = 0;
+
+        var increasePoints = function () {
+            counter++;
+            $('.count-number').text(counter);
+        };
+
+        $('.true').click(increasePoints);
+
+
+        var decreasePoints = function () {
+            if (counter === 0) {
+                $('.count-number').text(counter);
+            } else {
+                counter--;
+                $('.count-number').text(counter);
+            };
+        };
+
+        $(".false").click(decreasePoints);
+
+
+        var becomeNull = function () {
+            counter = 0;
+            $('.count-number').text(counter);
+        };
+
+        $('.null-counter').click(becomeNull);
+    </script>
+</body>
+</html>
